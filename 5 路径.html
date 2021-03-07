@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvasNode" width="500" height="500"> 你的浏览器不支持canvas 请升级浏览器 </canvas>
+
+    <script>
+      /** @type {HTMLCanvasElement} */
+      const canvas = document.getElementById('canvasNode')
+      // 获取画布对象
+      const ctx = canvas.getContext('2d')
+      // 创建路径
+      ctx.beginPath()
+      // 设置起始点
+      ctx.moveTo(100, 100)
+      // 设置路径
+      ctx.lineTo(200, 300)
+      ctx.lineTo(300, 230)
+      ctx.lineTo(440, 290)
+      ctx.lineTo(380, 50)
+      // 封闭路径
+      ctx.closePath()
+      // 绘制图形
+      ctx.strokeStyle = 'red'
+      ctx.stroke()
+      // 填充图形
+      ctx.fillStyle = 'skyblue'
+      ctx.fill()
+    </script>
+  </body>
+</html>

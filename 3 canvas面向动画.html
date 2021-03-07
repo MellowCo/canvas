@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvasNode" width="500" height="500"> 你的浏览器不支持canvas 请升级浏览器 </canvas>
+
+    <script>
+      /** @type {HTMLCanvasElement} */
+      const node = document.getElementById('canvasNode')
+      // 获取画布对象
+      const ctx = node.getContext('2d')
+
+      class Rect {
+        constructor(x, y, width, height, color, ctx) {
+          this.x = x
+          this.y = y
+          this.width = width
+          this.height = height
+          this.color = color
+          this.ctx = ctx
+        }
+
+        render() {
+          this.ctx.fillStyle = this.color
+          this.ctx.fillRect(this.x, this.y, this.width, this.height)
+        }
+
+        update() {
+          this.x++
+        }
+      }
+
+      const rect = new Rect(0, 10, 50, 50, 'green', ctx)
+      const rect2 = new Rect(0, 80, 50, 50, 'red', ctx)
+
+      setInterval(() => {
+        ctx.clearRect(0, 0, 500, 500)
+
+        rect2.update()
+        rect.update()
+
+        rect2.render()
+        rect.render()
+      }, 30)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvasNode" width="500" height="500"> 你的浏览器不支持canvas 请升级浏览器 </canvas>
+
+    <script>
+      /** @type {HTMLCanvasElement} */
+      const canvas = document.getElementById('canvasNode')
+      // 获取画布对象
+      const ctx = canvas.getContext('2d')
+
+      const line = ctx.createLinearGradient(10, 10, 50, 50)
+
+      line.addColorStop(0, 'blue')
+      line.addColorStop(1, 'red')
+
+      ctx.fillStyle = line
+      ctx.fillRect(0, 0, 100, 100)
+
+      const c = ctx.createRadialGradient(100, 210, 50, 100, 250, 100)
+      c.addColorStop(0, '#A7D30C')
+      c.addColorStop(0.9, '#019F62')
+      c.addColorStop(1, 'rgba(1,159,98,0)')
+      ctx.fillStyle = c
+      ctx.fillRect(0, 100, 250, 250)
+    </script>
+  </body>
+</html>

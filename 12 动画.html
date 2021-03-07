@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvasNode" width="500" height="500"> 你的浏览器不支持canvas 请升级浏览器 </canvas>
+
+    <script>
+      /** @type {HTMLCanvasElement} */
+      const canvas = document.getElementById('canvasNode')
+      const ctx = canvas.getContext('2d')
+      // ctx.save()
+      // ctx.fillStyle = 'blue'
+      // ctx.fillRect(0, 0, 50, 50)
+
+      // ctx.translate(60, 0)
+      // ctx.fillRect(0, 0, 50, 50)
+
+      // ctx.translate(60, 0)
+      // ctx.fillRect(0, 0, 50, 50)
+
+      // ctx.translate(60, 0)
+      // ctx.fillRect(0, 0, 50, 50)
+
+      // ctx.translate(60, 0)
+      // ctx.fillRect(0, 0, 50, 50)
+
+      // ctx.restore()
+
+      // ctx.save()
+      // ctx.fillStyle = 'red'
+      // ctx.fillRect(100, 60, 50, 50)
+      // ctx.translate(100, 60)
+
+      // ctx.rotate(1)
+      // ctx.fillRect(0, 60, 100, 100)
+
+      ctx.save()
+      ctx.fillStyle = 'blue'
+      ctx.scale(2, 2)
+      ctx.fillRect(10, 10, 30, 30)
+
+      ctx.restore()
+      ctx.fillStyle = 'red'
+      ctx.fillRect(10, 10, 30, 30)
+    </script>
+  </body>
+</html>
